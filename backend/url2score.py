@@ -1,9 +1,7 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from django.contrib import admin
-from django.urls import path, include
-def funcname(url):
+def url2score(url):
     res:string = ""
     options = Options()
     options.add_argument('--headless')
@@ -16,8 +14,6 @@ def funcname(url):
     driver.quit()
     return res
 
-def main():
-    
 
 
 
