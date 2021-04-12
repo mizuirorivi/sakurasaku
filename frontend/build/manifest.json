@@ -9,9 +9,6 @@
     "default_popup": "./index.html"
   },
   "commands": {},
-  "chrome_url_overrides": {
-    "newtab": "index.html"
-  },
   "permissions": [],
   "content_security_policy": "script-src 'self' 'sha256-lvHYVpwrvTlQqKJGKI5nH6+UXLocJNlmAMa1Hleva7o='; object-src 'self'"
 }
