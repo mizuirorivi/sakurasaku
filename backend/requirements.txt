@@ -1,6 +1,10 @@
-asgiref==3.3.4
-Django==3.2
-pytz==2021.1
+antiorm==1.2.1
+click==7.1.2
+db==0.1.1
+Flask==1.1.2
+itsdangerous==1.1.0
+Jinja2==2.11.3
+MarkupSafe==1.1.1
 selenium==3.141.0
-sqlparse==0.4.1
 urllib3==1.26.4
+Werkzeug==1.0.1
