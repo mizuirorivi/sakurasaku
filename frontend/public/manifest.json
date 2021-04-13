@@ -1,11 +1,11 @@
 {
-  "short_name": "titlename",
-  "name": "titlename",
+  "short_name": "sakurasaku",
+  "name": "sakurasaku",
   "description": "",
   "version": "1.0",
   "manifest_version": 2,
   "browser_action": {
-    "default_title": "titlename",
+    "default_title": "sakurasaku",
     "default_popup": "./index.html"
   },
   "commands": {},
@@ -13,5 +13,5 @@
     "newtab": "index.html"
   },
   "permissions": [],
-  "content_security_policy": "script-src 'self' 'sha256-xxx'; object-src 'self'"
+  "content_security_policy": "script-src 'self' 'sha256-lvHYVpwrvTlQqKJGKI5nH6+UXLocJNlmAMa1Hleva7o='; object-src 'self'"
 }

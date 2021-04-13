@@ -1,12 +1,14 @@
-# React Chrome Extension Template
-ReactでChrome拡張を開発するためのテンプレート
+# sakurasaku frontend
+
+### node version
+- any v14
 
 ### Package
 - "react": "^17.0.2",
 - "typescript": "^4.1.2"
 - "node-sass": "^5.0.0",
 
-## 使い方
+## environment stuff
 1. Chrome拡張のボタンから"拡張機能を管理"を開く
 2. "パッケージ化されていない拡張機能を読み込む"をクリックしてbuildディレクトリを選択
 3. 新しいタブを開くと以下のようなエラーが出てきます
