@@ -1,17 +1,17 @@
 {
-  "short_name": "sakurasaku",
-  "name": "sakurasaku",
-  "description": "",
-  "version": "1.0",
   "manifest_version": 2,
+
+  "name": "sakurasaku",
+  "description": "a google extension that can show each product's score using sakurachecker in amazon",
+  "version": "1.0",
+
   "browser_action": {
-    "default_title": "sakurasaku",
-    "default_popup": "./index.html"
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
   },
-  "chrome_url_overrides": {
-    "newtab": "index.html"
-  },
-  "commands": {},
-  "permissions": [],
-  "content_security_policy": "script-src 'self' 'sha256-8l32HEbNlAOc9M5jDRM+ZYLt2J6bsly/JxIV6aRxNM8='; object-src 'self'"
+
+  "permissions": [
+    "storage",
+    "<all_urls>"
+  ]
 }

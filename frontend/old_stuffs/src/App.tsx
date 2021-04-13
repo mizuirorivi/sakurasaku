@@ -26,11 +26,6 @@ const App: React.FC<any> = () => {
   const { isFetching: ratingFetching, data: _ratingData, remove: ratingRemove } = useQuery(
     'getRating', () => getRating(url)
   )
-    
-  console.log(path);
-  
-  
-
   /******** useEffect ********/
 
   let areFetching =

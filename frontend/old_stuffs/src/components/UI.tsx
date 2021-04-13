@@ -1,6 +1,4 @@
-import React from "react"
-
-const MainUI: React.FC<any> = (props: any) => {
+const MainUI = (props: any) => {
 
     return (
         <>
