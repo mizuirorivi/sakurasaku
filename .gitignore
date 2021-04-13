@@ -13,5 +13,5 @@ pip-selfcheck.json
 
 # frontend
 
-frontend/node_modules
-frondend/build
+old_stuffs/node_modules
+old_stuffs/build

@@ -11,6 +11,7 @@ import './styles/reset.scss'
 import ReactDOM from "react-dom"
 // IMPORTING COMPONENTS
 import MainUI from "./components/UI"
+import NoAmazonUI from "./components/NoAmazonUI"
 
 const queryClient = new QueryClient()   // Create a client
 
@@ -48,13 +49,19 @@ const Popup = () => {
   /******** methods ********/
 
   const methods = {
+    isAmazon: () => {
+      if (currentURL.indexOf('amazon') === -1) return false
+      return true
+    }
   }
 
   /******** JSX ********/
 
   return (
     <div className="AppContainer">
-      <MainUI rating={currentURL && currentURL !== '' ? rating : -1} />
+      { methods.isAmazon()
+      ? <MainUI rating={currentURL && currentURL !== '' ? rating : -1} />
+      : <NoAmazonUI/>}
     </div>
   );
 };
