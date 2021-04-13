@@ -10,8 +10,3 @@
 pyvenv.cfg
 .venv
 pip-selfcheck.json
-
-# frontend
-
-old_stuffs/node_modules
-old_stuffs/build
