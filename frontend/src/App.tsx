@@ -7,6 +7,9 @@ import {
   getRating
 } from 'apis/getRating'
 
+// IMPORTING COMPONENTS
+import MainUI from "components/UI"
+
 export default function App() {
 
   /******** consts ********/
@@ -53,12 +56,7 @@ export default function App() {
   /******** JSX ********/
   return (
     <div className="App">
-      <h1>sakurasaku🌸</h1>
-      <h3>良質なamazon商品を即時判断！</h3>
-      <div className="container">
-        <h3> この商品のレーティングは・・・ </h3>
-        <h3> {rating} / 5.0 </h3>
-      </div>
+      <MainUI rating={rating} />
     </div>
-  );
+  )
 }
