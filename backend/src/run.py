@@ -10,6 +10,7 @@ app.config.from_pyfile('../conf.cfg')
 
 app.register_blueprint(api)
 
+# errorコード表示
 @app.errorhandler(404)
 def page_not_found(error):
     return jsonify({'error': {
