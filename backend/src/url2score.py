@@ -6,7 +6,7 @@ def url2score(product_id):
     res = "" 
     options = Options()
     options.add_argument('--headless')
-    driver = webdriver.Chrome('/home/mizuiro/TOOLS/chromedriver',chrome_options=options)  # Optional argument, if not specified will search path.
+    driver = webdriver.Chrome('/Users/jumang/PROJECTS/tools/chromedriver',chrome_options=options)  # Optional argument, if not specified will search path.
     driver.get('https://sakura-checker.jp/search/' + str(product_id) + '/')
     for g_h3 in driver.find_elements_by_css_selector("#pagetop > div > div > div.mainArea > section.mainBlock > div.item-review-wrap > div:nth-child(2) > div > div:nth-child(1) > p:nth-child(2) > span"):
         print(g_h3.text)
