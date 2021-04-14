@@ -7,7 +7,7 @@ sakurasaku is a google extension that can show each product's score using sakura
 written in python, react-js.
 it is designed for non-programmer.
 
-<h2 align="left" id="english"> 🇺🇸english<h2>
+<h1 align="left" id="english"> 🇺🇸english<h1>
 
 ## documentation
 
@@ -19,7 +19,7 @@ sakurasaku supports all operating system that can run both chrome and Docker sys
 
 you can get this app from google app store! lets get it now
 
-<h2 align="left" id="japanese"> 🇯🇵日本語<h2>
+<h1 align="left" id="japanese"> 🇯🇵日本語<h1>
 
 ## ドキュメント
 
