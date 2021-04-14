@@ -1,11 +1,9 @@
-import React from "react"
-
-const MainUI: React.FC<any> = (props: any) => {
+const MainUI = (props: any) => {
 
     return (
         <>
             <h1>sakurasaku🌸</h1>
-            <h4>良質なamazon商品を即時判断！</h4>
+            <h3>良質なamazon商品を即時判断！</h3>
             <div className="container">
                 <h3> この商品のレーティングは・・・ </h3>
                 {props.rating !== -1
