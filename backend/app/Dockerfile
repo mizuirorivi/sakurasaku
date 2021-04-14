@@ -1,4 +1,4 @@
-FROM python:3.7.4-stretch 
+FROM python 
 # 環境変数設定
 ENV PYTHONIOENCODING utf-8
 ENV TZ='Asia/Tokyo'
