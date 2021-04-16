@@ -1,4 +1,4 @@
-FROM python 
+FROM --platform=linux/i386 python
 # 環境変数設定
 ENV PYTHONIOENCODING utf-8
 ENV TZ='Asia/Tokyo'
@@ -6,7 +6,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # 作業ディレクトリ作成
 WORKDIR /app
-
 
 # パッケージの更新確認
 RUN apt-get -y update
@@ -23,9 +22,7 @@ ADD requirements.txt /app/
 COPY . .
 #必要なライブラリのインストール
 RUN pip3 install -r requirements.txt
-RUN pip3 install chromedriver-binary==89.0.4389.23.0 
-
-# Chromeのインストール
+RUN pip3 install chromedriver-binary==89.0.4389.23.0
 
 RUN file src/run.py
 EXPOSE 8080
