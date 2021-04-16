@@ -21,6 +21,7 @@ ADD requirements.txt /app/
 COPY . .
 #必要なライブラリのインストール
 RUN pip3 install -r requirements.txt
+RUN pip3 install chromedriver-binary==89.0.4389.23.0 
 
 # chronium-driver install
 RUN apt-get install chromium -y
