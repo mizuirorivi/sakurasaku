@@ -21,10 +21,9 @@ ADD requirements.txt /app/
 COPY . .
 #必要なライブラリのインストール
 RUN pip3 install -r requirements.txt
+
 # chronium-driver install
-RUN wget https://launchpad.net/~canonical-chromium-builds/+archive/ubuntu/stage/+files/chromium-chromedriver_89.0.4389.128-0ubuntu0.18.04.1_armhf.deb
-RUN dpkg -i chromium-chromedriver_89.0.4389.128-0ubuntu0.18.04.1_armhf.deb
-RUN apt-get install chromium-browser
+RUN apt-get install chromium -y
 RUN file src/run.py
 EXPOSE 8080
 # コンテナ起動時に実行するコマンドを設定
