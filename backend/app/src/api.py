@@ -9,7 +9,7 @@ api = Blueprint('api',__name__,url_prefix='/api')
 # https://www.amazon.co.jp/gp/product/B082M5XW63/
 
 #/api/url2score?url=""
-@api.route('/url2score',method=['GET'])
+@api.route('/url2score',methods=['GET'])
 def get_retscore():
     
     #クエリー文字列の取得
@@ -26,7 +26,7 @@ def get_retscore():
     score = url2score.url2score(product_id)
     return jsonify({"score":str(score)})
 
-@api.route('/url2score',method=['POST'])
+@api.route('/url2score',methods=['POST'])
 def post_ret_score():
     #POSTされたJSONを取得
     json = request.get_json()
