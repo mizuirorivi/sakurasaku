@@ -11,14 +11,12 @@ import './styles/reset.scss'
 import ReactDOM from "react-dom"
 // IMPORTING COMPONENTS
 import MainUI from "./components/UI"
-import NoAmazonUI from "./components/NoAmazonUI"
 
 const queryClient = new QueryClient()   // Create a client
 
 const Popup = () => {
 
   /******** consts ********/
-
   /******** states ********/
   const [rating, setRating] = useState<any>(-1) // rating data
   const [currentURL, setCurrentURL] = useState<any>('');
@@ -42,7 +40,7 @@ const Popup = () => {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
       setCurrentURL(tabs[0].url);
       console.log('useEffected');
-      
+
     });
   }, []);
 
@@ -59,9 +57,7 @@ const Popup = () => {
 
   return (
     <div className="AppContainer">
-      { methods.isAmazon()
-      ? <MainUI rating={currentURL && currentURL !== '' ? rating : -1} />
-      : <NoAmazonUI/>}
+      <MainUI rating={currentURL && currentURL !== '' ? rating : -1} currentURL={currentURL} />
     </div>
   );
 };
