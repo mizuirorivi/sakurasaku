@@ -26,8 +26,13 @@ def show_page():
     return render_template('index.html',msg='Hello,',addditonal_msg="from Python")
 
 if __name__ == '__main__':
-    
-    parser = argparse.ArgumentParser(description="armアーキテクチャの選択")
+    help_desc_msg = """armアーキテクチャの選択
+    (なにも指定されない場合はデフォルトでx86-64になります)"""
+    help_epi_msg = """example:
+    python3 run.py -a arm
+    python3 run.py -arch arm
+    """
+    parser = argparse.ArgumentParser(description=help_desc_msg,epilog=help_epi_msg,formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('-arch','-a',default="x86-64",help="armの場合には-a arm or -arch armを引数にとる")
     args = parser.parse_args()
     print(args.arch)
