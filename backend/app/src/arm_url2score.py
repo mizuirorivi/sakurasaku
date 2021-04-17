@@ -12,7 +12,7 @@ def url2score(product_id):
     options.add_argument('--disable-gpu') # ヘッドレスモードで起動するときに必要
     options.add_argument('--window-size=1280,1024')  # 画面サイズの指定
     # chromeドライバーを起動
-    driver = webdriver.Chrome('./chromedriver',options=options)
+    driver = webdriver.Chrome('chromedriver',options=options)
     driver.get('https://sakura-checker.jp/search/' + str(product_id) + '/')
     for g_h3 in driver.find_elements_by_css_selector("#pagetop > div > div > div.mainArea > section.mainBlock > div.item-review-wrap > div:nth-child(2) > div > div:nth-child(1) > p:nth-child(2) > span"):
         print(g_h3.text)
