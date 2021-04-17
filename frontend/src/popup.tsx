@@ -11,13 +11,14 @@ import './styles/reset.scss'
 import ReactDOM from "react-dom"
 // IMPORTING COMPONENTS
 import MainUI from "./components/UI"
-import NoAmazonUI from "./components/NoAmazonUI"
 
 const queryClient = new QueryClient()   // Create a client
 
 const Popup = () => {
 
   /******** consts ********/
+  // 対応しているサイトリスト
+  const compSites: Array<string> = ["amazon"]
 
   /******** states ********/
   const [rating, setRating] = useState<any>(-1) // rating data
@@ -29,43 +30,52 @@ const Popup = () => {
   )
 
   /******** useEffect ********/
-  let areFetching =
+  let areFetching: boolean =
     ratingFetching || false
 
+  // rating
   useEffect(() => {
     if (areFetching) return
     _ratingData && setRating(_ratingData.score)
   }, [ratingFetching])
 
+  // when path changed
+  useEffect(() => {
+    // when the current path changed, automatically fetch data
+    // only if the site is amazon
+    methods.isntCompatible() && ratingRemove()
+  }, [currentURL])
+
   // get path data
   useEffect(() => {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      // url changed, automatically change state data
       setCurrentURL(tabs[0].url);
-      console.log('useEffected');
-      
     });
   }, []);
 
   /******** methods ********/
-
   const methods = {
-    isAmazon: () => {
-      if (currentURL.indexOf('amazon') === -1) return false
-      return true
+    isntCompatible: () => {
+      compSites.forEach((sites: string) => {
+        if (currentURL.indexOf(sites) !== -1) return true
+      })
+      return false
     }
   }
 
   /******** JSX ********/
-
   return (
     <div className="AppContainer">
-      { methods.isAmazon()
-      ? <MainUI rating={currentURL && currentURL !== '' ? rating : -1} />
-      : <NoAmazonUI/>}
+      <MainUI 
+      rating={currentURL && currentURL !== '' ? rating : -1} 
+      currentURL={currentURL}
+      compSites={compSites} />
     </div>
   );
 };
 
+// react translation
 ReactDOM.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>

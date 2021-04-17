@@ -21,3 +21,9 @@ npm install
 ```
 npm run watch
 ```
+
+### chrome debug
+
+assign ```frontend/dist``` as chrome browser extension
+
+when you modified something while u develop and willing to see the result, just refresh the extension

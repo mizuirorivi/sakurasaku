@@ -1,6 +1,6 @@
 ## バックエンド環境の構築
 
-### x86-64
+## 環境構築
 
 ```
 docker-compose build
@@ -12,10 +12,9 @@ docker-compose up -d
 
 backend/app/src以下に適当なchrome-driverを配置
 
+[chromedriver](https://chromedriver.storage.googleapis.com/index.html?path=89.0.4389.23/)を```backend/src```の中に配置する
+
 配置後pythonでarmを引数として指定して起動
-
-
-
 
 
 ## usage:
@@ -35,7 +34,6 @@ example:
     python3 run.py -arch arm
 
 ```
-
 
 
 ## url2scoreAPIの挙動
