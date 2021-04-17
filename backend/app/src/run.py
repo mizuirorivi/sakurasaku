@@ -1,11 +1,11 @@
 from flask import Flask, render_template, jsonify
 import argparse
 import config
-
+from flask_cors import CORS
 from api import api
 
 app = Flask(__name__)
-
+CORS(app)
 app.config.from_pyfile('../conf.cfg')
 
 
