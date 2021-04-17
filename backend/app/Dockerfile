@@ -18,12 +18,12 @@ RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.d
 RUN dpkg -i google-chrome-stable_current_amd64.deb
 # requirement.txtのコピー作成
 ADD requirements.txt /app/ 
+RUN google-chrome --version | perl -pe 's/([^0-9]+)([0-9]+\.[0-9]+).+/$2/g' > chrome-version
 
 COPY . .
 #必要なライブラリのインストール
 RUN pip3 install -r requirements.txt
-RUN pip3 install chromedriver-binary==89.0.4389.23.0
-
+RUN pip3 install chromedriver-binary~=`cat chrome-version`
 RUN file src/run.py
 EXPOSE 8080
 # コンテナ起動時に実行するコマンドを設定

@@ -1,7 +1,7 @@
 version: "3"
 services:
-  pythonappi386:
-    container_name: "appi386"
+  backend_sakuracheck:
+    container_name: "backend_sakuracheck"
     build: ./app
     ports:
       - "8080:8080"
