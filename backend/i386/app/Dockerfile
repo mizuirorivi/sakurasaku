@@ -1,4 +1,4 @@
-FROM --platform=linux/i386 python
+FROM python
 # 環境変数設定
 ENV PYTHONIOENCODING utf-8
 ENV TZ='Asia/Tokyo'
