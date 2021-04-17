@@ -1,33 +1,33 @@
-import React from "react"
-
+import React from "react";
+import Compatible from "./Compatible"
+import NonSupported from "./NonSupported"
+// catchable objects
 interface Props {
     currentURL: string;
     rating: number;
+    compSites: Array<string>
 }
 
-const MainUI: React.FC<Props> = ({currentURL, rating}) => {
+// MainUI Components
+const MainUI: React.FC<Props> = ({ currentURL, rating, compSites }) => {
+
+    /******** methods ********/
     const methods = {
-        isAmazon: () => {
-            if (currentURL.indexOf('amazon') === -1) return false
-            return true
+        isntCompatible: () => {
+          compSites.forEach((sites: string) => {
+            if (currentURL.indexOf(sites) !== -1) return true
+          })
+          return false
         }
-    }
+      }
 
     return (
         <>
             <h1>sakurasaku🌸</h1>
             <h4>良質なamazon商品を即時判断！</h4>
-            {methods.isAmazon()
-                ? <div className="container">
-                    <h3> この商品のレーティングは・・・ </h3>
-                    {rating !== -1
-                        ? <h3> {rating} / 5.0 </h3>
-                        : <>FETCHING</>}
-                </div>
-                : <div className="container">
-                    <h3> 現在閲覧のページはamazonではないようです </h3>
-                    <h3> amazonにアクセスしてスコアをチェック！ </h3>
-                </div>
+            {methods.isntCompatible()
+                ? <Compatible rating={rating} />
+                : <NonSupported />
             }
         </>
     )
