@@ -1,9 +1,18 @@
-## バックエンド環境の構築
+# Docker
+
+## 環境構築
 ```
 docker-compose build
 docker-compose up -d
 ```
 起動しているかどうかはhttp://localhost:8080/でhelloが出力されているかの確認ができればok
+
+# non Docker
+
+[chromedriver](https://chromedriver.storage.googleapis.com/index.html?path=89.0.4389.23/)を```backend/src```の中に配置する
+
+# python
+
 ## url2scoreAPIの挙動
 localhost:8080/api/url2score?url=<amazon_url>
 
